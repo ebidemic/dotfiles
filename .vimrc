@@ -86,3 +86,7 @@ endif
 
 "End dein Scripts-------------------------
 
+"Fortran設定
+let fortran_free_source=1
+let fortran_fold=1
+au! BufRead,BufNewFile *.f90 let b:fortran_do_enddo=1
