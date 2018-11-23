@@ -392,14 +392,14 @@ you should place your code here."
   ;;(require ‘xml-rpc)
 
 
-  (setq org2blog/wp-blog-alist 
-        '(("wordpress" 
-           :url "http://gagggorder.com/xmlrpc.php"  ;;xmlrcp.phpのURL
-           :username "gag_order"  
-           :password "A113abcd" 
-           :default-title "Hello World" ;; デフォルトタイトル
-           :default-categories ("Others") ;;カテゴリを指定 
-           :tags-as-categories nil))) ;; タグを指定
+  ;;(setq org2blog/wp-blog-alist 
+        ;;'(("wordpress" 
+           ;;:url "http://gagggorder.com/xmlrpc.php"  ;;xmlrcp.phpのURL
+           ;;:username "gag_order"  
+           ;;:password "A113abcd" 
+           ;;:default-title "Hello World" ;; デフォルトタイトル
+           ;;:default-categories ("Others") ;;カテゴリを指定 
+           ;;:tags-as-categories nil))) ;; タグを指定
 
   ;; yasnippet
 ;;  (add-to-list 'load-path "~/.emacs.d/yasnippet")
