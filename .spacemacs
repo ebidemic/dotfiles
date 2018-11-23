@@ -387,8 +387,8 @@ you should place your code here."
   ;;(setq load-path (cons "~/.emacs.d/org2blog/" load-path))
   ;;(require 'org2blog-autoloads)
 
-  (setq load-path (cons "~/.emacs.d/org2blog/" load-path))
-  (require 'org2blog-autoloads)
+;;  (setq load-path (cons "~/.emacs.d/org2blog/" load-path))
+;;  (require 'org2blog-autoloads)
   ;;(require ‘xml-rpc)
 
 
