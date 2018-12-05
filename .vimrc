@@ -39,6 +39,9 @@ call dein#add('thinca/vim-quickrun')
 call dein#add('lervag/vimtex')
 "call dein#add('TwitVim')
 call dein#add('vim-scripts/freefem.vim')
+"call dein#add('darfink/vim-plist')
+"fishのhighlight
+call dein#add('dag/vim-fish')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -48,7 +51,7 @@ call dein#end()
 
 " Required:
 filetype plugin indent on
-set number
+"set number
 syntax enable
 " colorscheme molokai
 set t_Co=256
@@ -78,6 +81,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgr
 let g:indent_guides_color_change_percent = 30
 " ガイドの幅
 let g:indent_guides_guide_size = 1
+"macのクリップボードにヤンク
+set clipboard=unnamed,autoselect
+
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
@@ -90,3 +96,6 @@ endif
 let fortran_free_source=1
 let fortran_fold=1
 au! BufRead,BufNewFile *.f90 let b:fortran_do_enddo=1
+
+"plistファイルの設定
+"let g:plist_display_format = 'xml'
