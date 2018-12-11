@@ -426,6 +426,13 @@ you should place your code here."
   ;;シンボリックリンク先のVCS内で更新が入った場合にバッファを自動更新
   (setq auto-revert-check-vc-info t)
 
+  ;; 日付挿入
+  (defun insert-current-time()
+    (interactive)
+    (insert (format-time-string "%Y-%m-%d(%a)" (current-time))))
+
+  (define-key global-map "\C-cf" `insert-current-time)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

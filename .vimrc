@@ -39,6 +39,9 @@ call dein#add('thinca/vim-quickrun')
 call dein#add('lervag/vimtex')
 "call dein#add('TwitVim')
 call dein#add('vim-scripts/freefem.vim')
+call dein#add('JamshedVesuna/vim-markdown-preview')
+
+
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
