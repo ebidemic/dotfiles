@@ -18,6 +18,7 @@ call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/vimfiler.vim')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('vim-scripts/VimClojure')
@@ -51,7 +52,7 @@ call dein#end()
 
 " Required:
 filetype plugin indent on
-"set number
+set number
 syntax enable
 " colorscheme molokai
 set t_Co=256

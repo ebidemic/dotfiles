@@ -332,6 +332,8 @@ you should place your code here."
   (setq tex-pdfview-command "/usr/bin/open -a Skim")
   (setq YaTeX-kanji-code 4)
   (setq YaTeX-template-file "~/.LaTeX-template")
+  (setq reftex-default-bibliography '("~/Library/texmf/pbibtex/bib/reference.bib"))
+  (add-hook 'yatex-mode-hook 'turn-on-reftex)
  
   ;; captureの設定
   (setq org-capture-templates
