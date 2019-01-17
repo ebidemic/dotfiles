@@ -328,13 +328,30 @@ you should place your code here."
   (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
   (setq bibtex-command "pbibtex")
   (setq tex-command "ptex2pdf -l -ot -shell-escape \"-synctex=1 -file-line-error\"")
-  (setq dvi2-command "/usr/bin/open -a Skim")
-  (setq tex-pdfview-command "/usr/bin/open -a Skim")
+  ;;(setq tex-command "lualatex -shell-escape -synctex=1")
+  ;;(setq YaTeX-inhibit-prefix-letter t)
+  (setq YaTeX-dvi2-command-ext-alist
+        '(("TeXworks\\|texworks\\|texstudio\\|mupdf\\|SumatraPDF\\|Preview\\|Skim\\|TeXShop\\|evince\\|atril\\|xreader\\|okular\\|zathura\\|qpdfview\\|Firefox\\|firefox\\|chrome\\|chromium\\|MicrosoftEdge\\|microsoft-edge\\|Adobe\\|Acrobat\\|AcroRd32\\|acroread\\|pdfopen\\|xdg-open\\|open\\|start" . ".pdf")))
+  (setq dvi2-command "open -a Skim")
+  (setq tex-pdfview-command "open -a Skim")
+  ;;(setq dvi2-command "/usr/bin/open -a Skim")
+  ;;(setq tex-pdfview-command "/usr/bin/open -a Skim")
   (setq YaTeX-kanji-code 4)
   (setq YaTeX-template-file "~/.LaTeX-template")
   (setq reftex-default-bibliography '("~/Library/texmf/pbibtex/bib/reference.bib"))
   (add-hook 'yatex-mode-hook 'turn-on-reftex)
- 
+
+  (defun skim-forward-search ()
+    (interactive)
+    (let* ((ctf (buffer-name))
+           (mtf (tex-main-file))
+           (pf (concat (car (split-string mtf "\\.")) ".pdf"))
+           (args (concat ln " " pf " " ctf)))
+      (message (concat cmd " " args))
+      (process-query-on-exit-flag
+       (start-process-shell-command "displayline" nil cmd args))))
+
+
   ;; captureの設定
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline "~/Dropbox/org/todo.org" "Tasks")
@@ -435,6 +452,7 @@ you should place your code here."
     (insert (format-time-string "%Y-%m-%d(%a)" (current-time))))
 
   (define-key global-map "\C-cf" `insert-current-time)
+
 
   )
 
