@@ -327,7 +327,8 @@ you should place your code here."
         (cons(cons "\\.tex$" 'yatex-mode) auto-mode-alist))
   (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
   (setq bibtex-command "pbibtex")
-  (setq tex-command "ptex2pdf -l -ot -shell-escape \"-synctex=1 -file-line-error\"")
+  ;;(setq tex-command "ptex2pdf -l -ot -shell-escape \"-synctex=1 -file-line-error\"")
+  (setq tex-command "latexmk -pvc")
   ;;(setq tex-command "lualatex -shell-escape -synctex=1")
   ;;(setq YaTeX-inhibit-prefix-letter t)
   (setq YaTeX-dvi2-command-ext-alist
