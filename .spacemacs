@@ -452,6 +452,28 @@ you should place your code here."
 
   (define-key global-map "\C-cf" `insert-current-time)
 
+  ;; (2019-11-24(日))Scrapboxのnewpageをspacemacsで行えるようにする実験
+;;  (defun my-post-scrapbox(beg end string)
+;;    (interactive "r\nsPageName: ")
+;;    (if mark-active
+;;        (progn
+;;          (let* ((body-string (buffer-substring-no-properties beg end))
+;;                 (page-name string))
+;;            (browse-url
+;;             (concat "https://scrapbox.io/de/" page-name "?body=" body-string))))
+;;      (message "No Region Selected")))
+;;
+;;  ;; Show the Page Body
+;;  (defun my-get-scrapbox (page-name)
+;;    (interactive "sPageName: ")
+;;    (async-shell-command
+;;     (concat "~/bin/scrapbox/get_scrapbox_page.sh " page-name)))
+;;
+;;  ;; Show Page Titles
+;;  (defun my-index-scrapbox ()
+;;    (interactive)
+;;    (async-shell-command "~/bin/scrapbox/get_scrapbox_page_titles.sh"))
+
 
   )
 

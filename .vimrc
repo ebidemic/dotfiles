@@ -43,9 +43,12 @@ call dein#add('vim-scripts/freefem.vim')
 "call dein#add('darfink/vim-plist')
 "fishのhighlight
 call dein#add('dag/vim-fish')
-
+call dein#add('LER0ever/EverVim')
+"markdownのプラグイン
+"call dein#add('plasticboy/vim-markdown')
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+call dein#add('mattn/emmet-vim')
 
 " Required:
 call dein#end()
