@@ -49,6 +49,7 @@ call dein#add('LER0ever/EverVim')
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 call dein#add('mattn/emmet-vim')
+call dein#add('mzlogin/vim-markdown-toc')
 
 " Required:
 call dein#end()
@@ -117,3 +118,24 @@ function! s:open_junk_file()
     execute 'edit ' . l:filename
   endif
 endfunction"}}}
+
+" vim-markdown settings
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
+
+" previm settings
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+" ctrl pでプレビュー
+nnoremap <silent> <C-p> :PrevimOpen<CR>
+
+"open-browser.vim settings
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
+"markdown-toc
+
+let g:vmt_auto_update_on_save = 1
+
